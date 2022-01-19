@@ -14,17 +14,20 @@
       <input type="submit" class="btn btn-lg btn-success" value="GO">
     </form>
   </div>
+  <?php error_reporting(0); ?>
   <br><center><h3><?php echo $title; ?></h3></center>
   <?php foreach($jobs as $job): ?>
   <div class="row marketing">
     <div class="col-md-10">
-      <h4><?php echo $job->job_title; ?></h4>
-      <p><?php echo $job->description; ?></p>
-    </div>
+      <h4><?php  echo $job->job_title; ?></h4>
+      <p><?php echo $job->description; ?></p> 
+    </div> 
+  
     <div class="col-md-2">
     	<a href="job.php?id=<?php echo $job->id;?>" class="btn btn-outline-success">View</a>
     </div>
   </div>
 <?php endforeach ?>
+<br><center><h4><?php echo $name; ?></h4><br></center>
   
 <?php include 'includes/footer.php' ?>
