@@ -13,11 +13,11 @@
 </ul>
 <br>
 <br>
-<a href="index.php">Go Back</a>
+<a href="index.php" style="color:white;">Go Back</a>
 <br>
 <br>
 <div class="alert alert-secondary">
-	<a href="edit.php?id=<?php echo $job->id; ?>" class="btn btn-success">Edit</a>
+	<a href="edit.php?id=<?php echo $job->id; ?>" class="btn btn-success" style="margin-top:0px;">Edit</a>
 	<form style="display:inline" method="POST" action="job.php">
 		<input type="hidden" name="del_id" value="<?php echo $job->id; ?>"> 
 		<input type="submit" class="btn btn-danger" value="delete">
