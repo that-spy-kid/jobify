@@ -1,34 +1,50 @@
-<?php include_once 'config/init.php'; ?>
-
-<?php
-
-$job = new Job;
-
-$template = new Template('templates/frontpage.php');
-
-$category = isset($_GET['category']) ? $_GET['category'] : null;
-
-if($category == 0) {
-	$template->title = 'Latest Jobs';
-	$template->jobs = $job->getAllJobs();
-}
-
-else
-{
-	$template->title = 'Jobs In '. $job->getCategory($category)->name;
-	if($job->getByCategory($category) == NULL)
-	{
-		$template->name = 'No Jobs Found :(';
-		error_reporting(0);
-
-	}
-	else
-	{
-	$template->jobs = $job->getByCategory($category);
-	}
-	
-}
-
-$template->categories = $job->getCategories();
-
-echo $template;
+<html>
+<head>
+  <link rel="icon" href="https://react-jobs-app.netlify.app/favicon.ico"/>
+    <title>JOBIFY</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+      .homeb {
+        margin:80px; background-color:lavender; }
+      .homeh3 {
+        margin-left:60px;color:red;
+      }
+      .homef {
+        font-size:20px;background-color: yellow;color:darkblue;font-family:'Trebuchet MS';font-weight:bold;
+      }
+      #homediv1 {
+        font-size:19px;font-family:verdana;
+      }
+      #homediv2 {
+        height:325; width:500;
+      }
+      #homeh1 {
+        color:blue;margin-top:5px;margin-left:5px;font-weight:bolder;
+        font-size:xx-large;font-family:'Trebuchet MS';vertical-align: middle;
+      }
+    </style>
+  </head>
+<body class="homeb">
+  <img src="https://react-jobs-app.netlify.app/favicon.ico">&nbsp
+    <label id="homeh1">Jobify</label>
+    <h3 class="homeh3"><b><em>- A place where everything about jobs exist</b></em></h3><br>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6" id="homediv1"><p>This is a portal which gives you 
+              the information regarding the job updates provided by the respective companies so that an individual 
+            can apply to the vaccant jobs with an ease. The information in this site is provided by the particular 
+            company 's representative so that there will not be any false updates,you can contact them through email
+            for phone number provided at the site.So every job aspirant can refer this site for frequent updates of jobs .
+            Here the jobs will be provided based on the category they are interested in.
+    Anyone can simply register and login to the website to just look into the details regarding any job they wish.
+        </p></div>
+        <div class="col-sm-1"></div>
+          <div class="col-sm-4"><img src="jobs.jpg" id="homediv2"></div>
+        </div>
+      </div>
+      <br>
+      <form action="login.html">
+          <input type="submit" class="homef" value="Login / Register">
+        </form>
+</body>
+</html>

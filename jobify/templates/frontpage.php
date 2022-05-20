@@ -1,13 +1,13 @@
 <?php include 'includes/header.php' ?>
 <style>
-a:hover {
+#only:hover {
 font-size: 18px;
 background-color:yellow;
-font-weight:bolder;
+font-weight:bolder; }
 </style>
 <br>
   <div class="jumbotron">
-    <h2 class="display-3" style="font-weight:bolder;color:blue;background-color:palegreen;font-family:geneva;" >Find your job</h2>
+    <h2 class="display-3" style="font-weight:bolder;color:black;background-color:palegreen;font-family:geneva;" >Find your job</h2>
     <form action="index.php" method="GET">
       <select name="category" class="form-control">
         <option value="0">Choose category</option>
@@ -28,7 +28,7 @@ font-weight:bolder;
       <p style="font-weight:larger;color:blue"><?php echo $job->description; ?></p>
     </div>
     <div class="col-md-2">
-    	<a href="job.php?id=<?php echo $job->id;?>" class="btn btn-outline-success" style="color:midnightblue;font-weight:bolder">View</a>
+    	<a href="job.php?id=<?php echo $job->id;?>" class="btn btn-outline-success" id="only" style="color:midnightblue;font-weight:bolder">View</a>
     </div>
   </div>
 <?php endforeach ?>
